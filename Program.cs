@@ -3,16 +3,16 @@ using System;
 namespace Laba_12_W
 {
 
-    class EventDelegateClass
+    class EventDelClass
     {
         private string name;
 
-        public delegate void EventDelegate(string txt);
-        public EventDelegateClass(string name)
+        public delegate void EventDel(string txt);
+        public EventDelClass(string name)
         {
             this.name = name;
         }
-        public event EventDelegate Event; 
+        public event EventDel Event; 
         public void RaiseMyEvent()
         { 
             if (Event != null)
@@ -21,10 +21,10 @@ namespace Laba_12_W
             }
         }
     }
-    class KakoyToClass
+    class Prekol
     { 
         private string text;
-        public KakoyToClass(string metodtext)
+        public Prekol(string metodtext)
         {
             text = metodtext;
         }
@@ -38,18 +38,18 @@ namespace Laba_12_W
     {
         static void Main()
         {
-            EventDelegateClass kakoyToOdject1 = new EventDelegateClass("KakoyToOdject1");
-            EventDelegateClass kakoyToOdject2 = new EventDelegateClass("KakoyToOdject2");
+            EventDelClass prekolObject1 = new EventDelClass("prekolObject1");
+            EventDelClass prekolObject2 = new EventDelClass("prekolObject2");
            
-            KakoyToClass KakoyToClassObject = new KakoyToClass("KakoyToClassObject");
+            Prekol chtotozaPrekol = new Prekol("chtotozaPrekol");
 
-            kakoyToOdject1.Event += KakoyToClassObject.show;
-            kakoyToOdject2.Event += KakoyToClassObject.show;
+            prekolObject1.Event += chtotozaPrekol.show;
+            prekolObject2.Event += chtotozaPrekol.show;
 
-            kakoyToOdject1.RaiseMyEvent();
+             prekolObject1.RaiseMyEvent();
             Console.WriteLine();
 
-            kakoyToOdject2.RaiseMyEvent();
+             prekolObject2.RaiseMyEvent();
             Console.WriteLine();
         }
     }
