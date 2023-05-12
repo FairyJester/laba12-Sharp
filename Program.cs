@@ -41,7 +41,7 @@ namespace Laba_12_W
             EventDelegateClass kaOdject1 = new EventDelegateClass("KaOdject1");
             EventDelegateClass kaOdject2 = new EventDelegateClass("KaOdject2");
            
-            KaClass KaClassObject = new KakoyToClass("KaClassObject");
+            KaClass KaClassObject = new KaToClass("KaClassObject");
 
             kaOdject1.Event += KaClassObject.show;
             kaOdject2.Event += KaClassObject.show;
